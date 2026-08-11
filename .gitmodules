@@ -1,0 +1,3 @@
+[submodule "shirasagi"]
+	path = shirasagi
+	url = https://github.com/ytmknd/shirasagi.git

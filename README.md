@@ -18,13 +18,29 @@ Powered by shirasagi (https://github.com/shirasagi/shirasagi)
 * MongoDB 8.0.26
 
 ## Install
+
 Checkout this git repo.
 
-`$ git clone https://github.com/ytmknd/shirasagi-docker.git`
+```sh
+git clone --recurse-submodules https://github.com/ytmknd/shirasagi-docker.git
+cd shirasagi-docker
+```
+
+For an existing checkout, initialize the SHIRASAGI submodule before building.
+
+```sh
+git submodule update --init --recursive
+```
 
 Build ruby image.
 
-`$ bash build.sh`
+```sh
+./build.sh
+```
+
+The `shirasagi/` directory is pinned as a Git submodule of
+https://github.com/ytmknd/shirasagi. That fork is based on the official
+https://github.com/shirasagi/shirasagi repository.
 
 ## Secret key setup
 
