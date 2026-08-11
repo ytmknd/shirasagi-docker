@@ -24,6 +24,7 @@ services:
     container_name: shirasagi_nginx
     volumes:
       - ./nginx/conf.d/shirasagi.conf:/etc/nginx/conf.d/shirasagi.conf
+      - /dev/null:/etc/nginx/conf.d/default.conf
       - ./nginx/log:/var/log/nginx
       - ./nginx/www:/var/www
     links:
@@ -34,6 +35,8 @@ services:
   shirasagi:
     build: ./shirasagi_image
     container_name: shirasagi_shirasagi
+    environment:
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE:?Set SECRET_KEY_BASE in .env}
     volumes:
       - ./shirasagi_image/run.sh:/run.sh
       - ./shirasagi:/var/www/shirasagi

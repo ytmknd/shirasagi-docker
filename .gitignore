@@ -2,3 +2,4 @@ shirasagi/*
 certs/*
 nginx/log/*
 nginx/www/*
+.env

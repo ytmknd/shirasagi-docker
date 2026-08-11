@@ -14,6 +14,19 @@ Build ruby image.
 
 `$ bash build.sh`
 
+## Secret key setup
+
+Create a local `.env` file before starting the containers. The `.env` file is
+ignored by Git and must not be committed.
+
+```sh
+cp .env.example .env
+openssl rand -hex 64
+```
+
+Set the generated value as `SECRET_KEY_BASE` in `.env`. Docker Compose refuses
+to start the SHIRASAGI service when the value is missing or empty.
+
 ## Optional: Change settings
 
 If use https, unccoment and edit <<your.domain>> docker-compose.yml.

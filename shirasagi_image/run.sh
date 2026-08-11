@@ -13,6 +13,7 @@ gem install rake
 bundle install
 
 # Launch
+rm -f /var/www/shirasagi/tmp/pids/unicorn.pid
 bundle exec rake unicorn:start
 
 # Do not terminate
