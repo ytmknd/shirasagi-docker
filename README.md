@@ -2,8 +2,13 @@
 
 Powered by shirasagi (https://github.com/shirasagi/shirasagi)
 
-## Tested Platforms
-* Ubuntu 20.04.4 LTS(ARM64)
+## Tested environment
+
+* Host: macOS 26.6.1 (Apple Silicon / ARM64)
+* Docker Desktop 29.7.2
+* SHIRASAGI container: Debian 12 (bookworm)
+* MongoDB container: Ubuntu 24.04 LTS (noble)
+* Nginx container: Debian 13 (trixie)
 
 ## Runtime versions
 
@@ -15,7 +20,7 @@ Powered by shirasagi (https://github.com/shirasagi/shirasagi)
 ## Install
 Checkout this git repo.
 
-`$ git clone https://github.com/mssibain/shirasagi-docker.git`
+`$ git clone https://github.com/ytmknd/shirasagi-docker.git`
 
 Build ruby image.
 
