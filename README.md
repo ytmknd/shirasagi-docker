@@ -7,7 +7,7 @@ Powered by shirasagi (https://github.com/shirasagi/shirasagi)
 
 ## Runtime versions
 
-* Ruby 4.0.6 / Rails 8.1.3.1 / Bundler 4.0.16
+* Ruby 4.0.6 / Rails 8.1.3.1 / Puma 8.0.2 / Bundler 4.0.16
 * Node.js 24.18.0 / Yarn 1.22.22
 * Nginx 1.30.4
 * MongoDB 8.0.26
