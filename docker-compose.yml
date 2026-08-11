@@ -42,19 +42,23 @@ services:
       - bundle:/var/www/shirasagi/vendor/bundle
     command: bash /run.sh
     depends_on:
-      - mongodb
+      mongodb:
+        condition: service_healthy
     tty: true
     stdin_open: true
     restart: always
   mongodb:
-    image: mongo:4.4.14
+    image: mongo:8.0.26
     container_name: shirasagi_db
     command: --wiredTigerCacheSizeGB=1
-    environment:
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/dev/null
     volumes:
       - dbdata:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "quit(db.adminCommand({ ping: 1 }).ok ? 0 : 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     restart: always
 volumes:
   bundle:

@@ -5,6 +5,13 @@ Powered by shirasagi (https://github.com/shirasagi/shirasagi)
 ## Tested Platforms
 * Ubuntu 20.04.4 LTS(ARM64)
 
+## Runtime versions
+
+* Ruby 4.0.6 / Rails 8.1.3.1 / Bundler 4.0.16
+* Node.js 24.18.0 / Yarn 1.22.22
+* Nginx 1.30.4
+* MongoDB 8.0.26
+
 ## Install
 Checkout this git repo.
 
@@ -46,7 +53,7 @@ and remove ports section in nginx service.
   #     WORKER_PROCESSES: auto
   #     WORKER_CONNECTIONS: 2048
   #     CLIENT_MAX_BODY_SIZE: '128M'
-  #   links:
+  #   depends_on:
   #     - nginx
   #   volumes:
   #     - ./certs:/var/lib/https-portal
@@ -59,6 +66,10 @@ and remove ports section in nginx service.
 Wakeup docker container.
 
 `$ sudo docker compose up -d`
+
+Existing MongoDB 4.4 volumes must be upgraded one major version at a time before
+starting this Compose configuration. See
+[MongoDB 4.4 to 8.0 upgrade](docs/mongodb-4.4-to-8.0.md).
 
 _**Attention**_
 
